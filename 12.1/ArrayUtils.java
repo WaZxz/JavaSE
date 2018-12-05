@@ -68,7 +68,7 @@ public class ArrayUtils{
     public static int[] arraySub(int[] data, int start , int end)
     {
         int mid = end - start;
-        int x[] = new int[mid];
+        int[] x = new int[mid];
         for(int i = 0; i<mid ; i++)
         {
             x[i] = data[start + i + 1];  
@@ -84,9 +84,10 @@ public class ArrayUtils{
     //6.数组打印
     public static void printArray(int[] data)
     {
+        System.out.println("数组打印结果：" );
         for(int j : data)
         {
-            System.out.print(j+"、");
+            System.out.println(j);
         }
     }
     /** {   
@@ -105,21 +106,38 @@ public class ArrayUtils{
     //不用新数组
     public static void printReversal(int[] data)
     {
-        int x[] = new int[data.length];
+        /** int[] x = new int[data.length];
         for(int i = 0;i < data.length ;i++)
         {
             x[i] = data[i];
         }    
         for(int j = 0;j < data.length ;j++)
         {
-            data[j] = x[data.length - j];
+            data[j] = x[data.length - j];//为什么这样写会栈溢出，j不可能到5的呀
         }
         System.out.println("翻转数组：" );
         for(int k = 0;k < data.length ;k++)
         {
             System.out.println(data[k]);
+        } 
+        */
+        System.out.println("数组fan转结果为：");
+        for(int j = data.length - 1;j >= 0;j--)
+        {
+            System.out.println(data[j]);
+        } 
+        for(int i = 0;i < data.length/2;i++)
+        {
+            int temp = data[i];
+            data[i] = data[data.length - 1 - i];
+            data[data.length - 1 - i] = temp; 
+
         }
-        
+        System.out.println("数组翻转结果为：");
+        for(int k = 0;k < data.length ;k++)
+        {
+            System.out.println(data[k]);
+        } 
     }
     
     public static void main(String[] args){
