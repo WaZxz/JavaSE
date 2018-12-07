@@ -32,10 +32,10 @@ public class Ex1
         per.age = 20;
         Person per1 = per;//引用传递
         per1.name = "李四";
-        per = per 1 =new Person();
-        
-
+        per = new Person();
+        per1 = per;
         per.fun();
         per.work();
     }
 }
+
